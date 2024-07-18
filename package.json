@@ -1,0 +1,41 @@
+{
+  "name": "crud_nodejs",
+  "version": "1.0.0",
+  "description": "CRUD made with Node.js, Express, TypeScript, TypeORM, EJS & SQLite.",
+  "main": "index.js",
+  "repository": "https://github.com/sinvalbsneto/crud_nodejs.git",
+  "author": "Sinval Neto <70284242+sinvalbsneto@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/connect-flash": "^0.0.37",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-session": "^1.17.3",
+    "morgan": "^1.10.0",
+    "passport": "0.4.1",
+    "passport-local": "^1.0.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.11",
+    "typeorm": "^0.2.45",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
+    "@types/morgan": "^1.9.4",
+    "@types/passport": "^1.0.9",
+    "@types/passport-local": "^1.0.34",
+    "@types/uuid": "^8.3.4",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.3"
+  }
+}

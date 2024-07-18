@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Node.js</title>
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="./home"><img src="/img/icon.png" alt="Node.js icon" class="nav-icon"></a>
+      <ul class="nav navbar-nav me-auto mb-2 mb-lg-0"">
+        <li class="nav-item"><a class="nav-link" href="./home">Inicio</a></li>
+      </ul>
+      <form class="d-flex" action="./searchproduct" method="GET">
+          <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Buscar" name="search">
+          <button class="btn secondary-btn" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+  <br>
+  <div class="container row centered ">
+    <div class="text-center">
+      <h2>Datos de Factura</h2>
+    </div>
+    <br>
+    <form action="./add-factura" method="POST">
+      <div class="row">
+        <div class="col-2">
+          <label for="tipo_factura" class="form-label">Tipo de factura</label>
+           <select name="tipo_factura" id="tipo_factura" class="form-select">
+              <option value="" selected disabled>Selecione el Tipo</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-2">
+        <label for="num_factura" class="form-label">Numero de Factura</label>
+        <input type="text" name="num_factura" id="num_factura" class="form-control">
+      </div>
+      
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <label for="cliente_id" class="form-label">Cliente</label>
+          <select name="cliente_id" id="cliente_id" class="form-select">
+            <option selected disabled>Seleccione un cliente</option>   
+            <% clientes.forEach(function(cliente) { %>
+              <option value="<%= cliente.id %>"> 
+                <%= cliente.name %> 
+              </option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="col-6">
+          <label for="datetime">Fecha de Facturacion:</label>
+          <br>
+          <input type="date" id="fecha" name="fecha" class="form-control">
+        </div>
+        
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <label for="productos">Seleccione uno o varios productos</label>
+        <select multiple class="form-control" name="productos" id="productos" required size="4">
+          <option value="" selected disabled>Seleccione productos</option>
+          <% productos.forEach(function(products){ %>
+            <option value="<%= products.id %>">
+              <%= products.nombre %>
+            </option>
+            <%})%>
+        </select>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <label for="productos" class="form-label">Producto</label>
+          <select  name="productos" id="productos" class="form-select" required sze="4">
+            <option value="" selected disabled>Seleccione productos</option>
+            <% productos.forEach(function(producto){ %>
+              <option value="<%= producto.id %>">
+                <%= producto.nombre %>
+              </option>
+              <%})%>
+          </select>
+        </div>
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <div class="float-start">
+            <a href="./factura" class="btn primary-btn">Volver</a>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="float-end">
+            <button type="submit" class="btn primary-btn" >Crear Factura</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  
+  
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+    <script>
+      const selectProducto = document.getElementById('productos');
+      const agregarButton = document.getElementById('agregar');
+      const listaProductosTextarea = document.getElementById('listaProductos');
+      const nuevoProductoTextarea = document.getElementById('nuevoProducto');
+  
+      agregarButton.addEventListener('click', () => {
+        const selectedOption = selectProducto.options[selectProducto.selectedIndex];
+        const selectedProductName = selectedOption.text;
+        const nuevoProducto = nuevoProductoTextarea.value.trim();
+  
+        if (nuevoProducto !== '') {
+          listaProductosTextarea.value += nuevoProducto + '\n';
+          nuevoProductoTextarea.value = '';
+        } else if (selectedProductName !== '') {
+          listaProductosTextarea.value += selectedProductName + '\n';
+        }
+      });
+    </script>
+  
+</body>
+
+</html>
