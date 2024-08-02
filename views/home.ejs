@@ -6,17 +6,92 @@
         <title>CRUD Node.js</title>
         <link rel="shortcut icon" href="img/icon.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
-          rel="stylesheet">
-        <link rel="stylesheet" href="/css/style.css">
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"> -->
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+        <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css"> -->
+        <link rel="stylesheet" href="/css/custom.css">
       </head>
-      
-<body>
+      <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="./home"><img src="/img/icon.png" alt="Node.js icon" class="nav-icon"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="./logout">Cerrar Sesión</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="container">
+            <a class="navbar-brand" href="./home"><img src="/img/icon.png" alt="Node.js icon" class="nav-icon"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="./logout">Cerrar Sesion</a>
+            <form class="d-flex" action="./searchcategory" method="GET">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" name="search">
+              <button class="btn secondary-btn" type="submit">Buscar</button>
+          </form>
+          </div> -->
+        </nav>
+        <div class="container my-4">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Registre y Edite Usuarios</h5>
+                  <a href="./users" class="btn btn-dark">Usuarios</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Agregue y Actualice Productos</h5>
+                  <a href="./products" class="btn btn-dark">Productos</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Agregue y Actualice Categorías</h5>
+                  <a href="./categories" class="btn btn-dark">Categorías</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Agregue y Actualice Clientes</h5>
+                  <a href="./clientes" class="btn btn-dark">Clientes</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title">Emita Factura</h5>
+                  <a href="./facturas" class="btn btn-dark">Facturas</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script src="js/functions.js"></script>
+      </body>    
+<!-- <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
     <div class="container">
       <a class="navbar-brand" href="./home"><img src="/img/icon.png" alt="Node.js icon" class="nav-icon"></a>
@@ -35,49 +110,48 @@
     <div class="box1">
       <span></span>
       <div class="content1">
-        <h3>Registre y Edite Usuarios</h3>
+        <h3>Registre y Edite Usuarios</h3> -->
         <!-- <p>Registre y edite usuarios</p> -->
-        <a href="./users" class="btn primary-btn">Usuarios</a>
+        <!-- <a href="./users" class="btn primary-btn">Usuarios</a>
       </div>
     </div>
     <div class="box1">
       <span></span>
       <div class="content1">
-        <h3>Agregue y Actualice Productos</h3>
+        <h3>Agregue y Actualice Productos</h3> -->
         <!-- <p>Agregue y actualice productos</p> -->
-        <a href="./products" class="btn primary-btn">Productos</a>
+        <!-- <a href="./products" class="btn primary-btn">Productos</a>
       </div>
     </div>
     <div class="box1">
       <span></span>
       <div class="content1">
-        <h3>Agregue y Actualice Categorias</h3>
+        <h3>Agregue y Actualice Categorias</h3> -->
         <!-- <p>Agregue y actualice productos</p> -->
-        <a href="./categories" class="btn primary-btn">Categorías</a>
+        <!-- <a href="./categories" class="btn primary-btn">Categorías</a>
       </div>
     </div>
     <div class="box1">
       <span></span>
       <div class="content1">
-        <h3>Agregue y Actualice Clientes</h3>
+        <h3>Agregue y Actualice Clientes</h3> -->
         <!-- <p>Agregue y actualice productos</p> -->
-        <a href="./clientes" class="btn primary-btn">Clientes</a>
+        <!-- <a href="./clientes" class="btn primary-btn">Clientes</a>
       </div>
     </div>
     <div class="box1">
       <span></span>
       <div class="content1">
-        <h3>Emita Factura</h3>
+        <h3>Emita Factura</h3> -->
         <!-- <p>Agregue y actualice productos</p> -->
-        <a href="./facturas" class="btn primary-btn">Facturas</a>
+        <!-- <a href="./facturas" class="btn primary-btn">Facturas</a>
       </div>
     </div>
   </div>
     
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
   crossorigin="anonymous"></script>
 <script src="js/functions.js"></script>
-</body>
+</body> -->
 </html>
