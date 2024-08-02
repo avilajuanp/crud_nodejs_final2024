@@ -1,7 +1,7 @@
 # CRUD Node.js
 CRUD made with Node.js, Express, TypeScript, TypeORM, EJS &amp; SQLite.
 
-![Home page image](https://github.com/sinvalbsneto/crud_nodejs/blob/main/public/img/home.png)
+![Home page image](https://github.com/avilajuanp/crud_nodejs_final2024/blob/129dcde6ed7bf38767a5e46cb86b582c48b972c8/public/img/home.png)
 
 ## How to run:
 - Clone the repository.
