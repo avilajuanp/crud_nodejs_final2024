@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: dimgray;
@@ -25,7 +30,31 @@ h2 {
 }
 
 .form-control {
-  border-radius: 0.25rem;
+  border-radius: 0.15rem;
+}
+
+.primary-btn {
+  background-color: #3d853c;
+  color: #fff;
+  /* border-radius: 1rem; */
+  /* border-color: black; */
+}
+
+.primary-btn:hover {
+  background-color: rgb(2, 255, 23);
+  border-color: #f8f8f8;
+  color: #000000;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border-color: #6cc24a;
+  color: #c6b6b6
+}
+
+.secondary-btn:hover {
+  background-color: #6cc24a;
+  color: #fff;
 }
 
 .btn-dark {
