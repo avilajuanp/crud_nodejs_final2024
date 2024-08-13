@@ -73,15 +73,15 @@ class ProductService {
 
     const productsRepository = getCustomRepository(ProductsRepository);
 
-    const product = await productsRepository
+    const products = await productsRepository
       .createQueryBuilder()
       .where("nombre like :search", { search: `%${search}%` })
       .orWhere("marca like :search", { search: `%${search}%` })
       .orWhere("precio like :search", { search: `%${search}%` })
       .orWhere("id_category like :search", { search: `%${search}%` })
       .getMany();
-
-    return product;
+    console.info(products)
+    return products;
 
   }
 
